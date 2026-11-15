@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7eee4">
+  <meta name="description" content="Explore phones, compare specifications, browse brands and discover mobile technology.">
+  <title>mobile — alx</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script type="importmap">{"imports":{"@kawarp/core":"https://esm.sh/@kawarp/core"}}</script>
+  <script type="module" src="/js/background.js"></script>
+  <script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <canvas id="ambient" aria-hidden="true"></canvas>
+  <div class="ambient-wash" aria-hidden="true"></div>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="alx mobile home"><span class="mark">a.</span><span>mobile<span class="wordmark-dot">.</span></span></a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#discover" data-view="discover">discover</a>
+        <a class="nav-link" href="#brands" data-view="brands">brands</a>
+        <a class="nav-link" href="#compare" data-view="compare">compare</a>
+        <a class="nav-link" href="#deals" data-view="deals">deals</a>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle color theme" title="Toggle theme"><span class="theme-glyph">◐</span></button>
+        <button class="menu-button" id="menu-toggle" type="button" aria-label="Open navigation"><span></span><span></span></button>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1">
+      <section class="hero" id="discover">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE MOBILE INDEX <span class="eyebrow-year">EST. 2026</span></div>
+        <div class="hero-copy">
+          <h1>find your<br><span>next phone.</span></h1>
+          <p class="hero-description">A closer look at the devices, details and technology shaping the way we connect.</p>
+        </div>
+        <form class="search-form" id="search-form" role="search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="Search phones, brands, chipsets..." autocomplete="off" aria-label="Search phones and brands">
+          <kbd>ENTER ↵</kbd>
+          <button type="submit" aria-label="Search">Search <span>↗</span></button>
+        </form>
+        <div class="hero-meta"><span>EXPLORE THE SPEC SHEET</span><span>BUILT FOR THE CURIOUS <i>✳</i></span></div>
+      </section>
+
+      <section class="section-block" id="quick-search-results" hidden>
+        <div class="section-heading"><div><span class="section-index">00 / SEARCH</span><h2 id="search-title">Search results</h2></div><button class="text-button" id="clear-search">Clear ×</button></div>
+        <div class="device-grid" id="search-results"></div>
+      </section>
+
+      <section class="section-block" id="trending">
+        <div class="section-heading"><div><span class="section-index">01 / RIGHT NOW</span><h2>In the conversation<span class="orange-dot">.</span></h2><p class="section-subtitle">The devices getting the most attention.</p></div><a class="text-button" href="#top" data-view="top">View all <span>↗</span></a></div>
+        <div class="trending-grid" id="top-devices"><div class="loading-card"><span class="spinner"></span><span>Gathering the latest devices…</span></div></div>
+      </section>
+
+      <section class="section-block brand-section" id="brands">
+        <div class="section-heading"><div><span class="section-index">02 / THE MAKERS</span><h2>Browse by brand<span class="orange-dot">.</span></h2><p class="section-subtitle">Go straight to the people making the hardware.</p></div><a class="text-button" href="#brands" data-view="brands">All brands <span>↗</span></a></div>
+        <div class="brand-grid" id="brand-list"><div class="loading-card"><span class="spinner"></span><span>Loading manufacturers…</span></div></div>
+      </section>
+
+      <section class="section-block split-section" id="explore-more">
+        <article class="feature-panel feature-panel-dark">
+          <span class="section-index">03 / THE DETAILS</span>
+          <div><span class="feature-symbol">⌁</span><h2>Specs tell<br>the story.</h2><p>Displays, sensors, silicon, battery chemistry. Get into the details that actually make a device.</p></div>
+          <a href="#glossary" data-view="glossary" class="feature-link">Explore the glossary <span>↗</span></a>
+        </article>
+        <article class="feature-panel feature-panel-orange">
+          <span class="section-index">04 / SIDE BY SIDE</span>
+          <div><span class="feature-symbol">⇄</span><h2>Make the<br>comparison.</h2><p>Put up to four phones next to each other and see where the differences live.</p></div>
+          <a href="#compare" data-view="compare" class="feature-link">Compare devices <span>↗</span></a>
+        </article>
+      </section>
+
+      <section class="section-block" id="deals">
+        <div class="section-heading"><div><span class="section-index">05 / THE MARKET</span><h2>Worth a look<span class="orange-dot">.</span></h2><p class="section-subtitle">Listings and deals currently surfaced by GSMArena.</p></div><a class="text-button" href="#deals" data-view="deals">All deals <span>↗</span></a></div>
+        <div class="deal-grid" id="deal-list"><div class="loading-card"><span class="spinner"></span><span>Checking current listings…</span></div></div>
+      </section>
+
+      <section class="section-block glossary-teaser" id="glossary">
+        <div><span class="section-index">06 / KNOW THE LANGUAGE</span><h2>One more thing<span class="orange-dot">.</span></h2><p class="section-subtitle">A growing reference for the technology inside your pocket.</p></div>
+        <a class="outline-link" href="#glossary" data-view="glossary">Open the glossary <span>↗</span></a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-top"><a class="wordmark" href="/"><span class="mark">a.</span><span>mobile<span class="wordmark-dot">.</span></span></a><p>A little more curious about the devices we use every day.</p><a href="https://alx12.dpdns.org" target="_blank" rel="noreferrer">a project by alx ↗</a></div>
+      <div class="footer-bottom"><span>© 2026 ALX / MOBILE INDEX</span><span>DATA SOURCED FROM GSMARENA · NOT AFFILIATED</span><span id="api-status">CONNECTING TO THE INDEX…</span></div>
+    </footer>
+  </div>
+
+  <dialog id="device-dialog" class="device-dialog"><button class="dialog-close" id="dialog-close" aria-label="Close">×</button><div id="device-detail"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
