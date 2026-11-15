@@ -1,0 +1,20 @@
+name = "alx-mobile-discovery"
+main = "src/index.js"
+compatibility_date = "2026-11-15"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+[observability]
+enabled = true
+
+# Add your custom domain in Cloudflare Workers > Settings > Domains & Routes:
+# mobile.alx12.dpdns.org
+
+[vars]
+# Optional: URL of your own deployment of the DXOMARK companion API.
+# MOBILE_SPECS_API = "https://your-companion-api.example"

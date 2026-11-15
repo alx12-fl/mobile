@@ -1,0 +1,17 @@
+{
+  "name": "alx-mobile-discovery",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "node --check src/index.js && node --check public/js/app.js && node --check public/js/api.js && node --check public/js/render.js && node --check public/js/background.js"
+  },
+  "dependencies": {
+    "gsmarena-api": "2.0.5"
+  },
+  "devDependencies": {
+    "wrangler": "^4.50.0"
+  }
+}
